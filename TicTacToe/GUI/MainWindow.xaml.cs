@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BIZ;
 
 namespace GUI
 {
@@ -20,9 +21,23 @@ namespace GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        ClassTextBoxHandler CTBH;
         public MainWindow()
         {
             InitializeComponent();
+            CTBH = new ClassTextBoxHandler();
+            MainGrid.DataContext = CTBH;
+        }
+        private void textBoxDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+
+            if (CTBH.RegTextBoxClick(textBox.Tag.ToString()))
+            {
+                UserControlWinner UCW = new UserControlWinner(CTBH.actualSign, this.WinnerGrid);
+                WinnerGrid.Children.Add(UCW);
+                CTBH.ResetAll();
+            }
         }
     }
 }

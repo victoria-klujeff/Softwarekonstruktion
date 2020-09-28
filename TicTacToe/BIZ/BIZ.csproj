@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassCheckForWinner.cs" />
+    <Compile Include="ClassCountDrawAndRegister.cs" />
+    <Compile Include="ClassTextBoxHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
