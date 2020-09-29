@@ -15,12 +15,15 @@ namespace BIZ
 
         public ClassTextBoxHandler()
         {
+            gridColor = "Red";
+            actualSign = "X";
+            classTextBoxCollection = new ClassTextBoxCollection();
         }
 
         public ClassTextBoxCollection classTextBoxCollection { get; set; } // Simple property
 
         /// <summary>
-        /// Property returns the filed _gridColor
+        /// Property returns the field _gridColor
         /// set checks if the value is changed, if true we update actualSign so the color fits
         /// </summary>
         public string gridColor
@@ -30,7 +33,7 @@ namespace BIZ
             {
                 if (_gridColor != value)
                 {
-                    actualSign = value;
+                    _gridColor = value;
                 }
                 Notify("gridColor");
             }
@@ -85,12 +88,12 @@ namespace BIZ
                 // If no winner is found we update the color of the gamepad
                 if (bolRes == false)
                 {
-                    SetColor();
+                    SetColorAndSign();
+                    //SetSign();
                 }
 
             }
-            else
-            {
+            
                 // If false we need to check if a sign needs to be removed and if true if the sign matches the content of actualSign
                 // If true we remove the sign and all controlelements are updated
                 if (CheckNumberOfSigns() == 3)
@@ -102,7 +105,7 @@ namespace BIZ
                         classTextBoxCollection.SetSign(boxID, "");
                     }
                 }
-            }
+            
 
             return bolRes; // return bool bolRes
         }
@@ -111,32 +114,48 @@ namespace BIZ
         /// Method checks which color the property gridColor has
         /// and changes it to fit the conditions in the if iteration
         /// </summary>
-        private void SetColor()
+        private void SetColorAndSign()
         {
             if (gridColor == "Red")
             {
                 gridColor = "Blue";
+                actualSign = "O";
             }
             else
             {
                 gridColor = "Red";
+                actualSign = "X";
             }
         }
 
+        //private void SetSign()
+        //{
+        //    if (gridColor == "Red")
+        //    {
+        //        actualSign = "X";
+        //    }
+        //    else
+        //    {
+        //        actualSign = "O"; 
+        //    }
+        //}
         /// <summary>
         /// Method needs to return how many times the sign held by actualSign appears
         /// </summary>
         /// <returns>int</returns>
         private int CheckNumberOfSigns()
         {
-            int numberOfSigns = Convert.ToInt32(actualSign);
+            int res = 0;
+            if (actualSign == "X")
+            {
+                res = intX;
+            }
+            else
+            {
+                res = intO;
+            }
 
-            return numberOfSigns;
-
-            /*
-             * 
-             * return = res(the number of times the value of actualSign appears)
-             */
+            return res;
         }
 
         /// <summary>
@@ -144,7 +163,14 @@ namespace BIZ
         /// </summary>
         private void UpdateNumberOfSignsAdd()
         {
-
+            if (actualSign == "X")
+            {
+                intX++;
+            }
+            else
+            {
+                intO++;
+            }
         }
 
         /// <summary>
@@ -152,17 +178,28 @@ namespace BIZ
         /// </summary>
         private void UpdateNumberOfSignsRemove()
         {
-
+            if (actualSign == "X")
+            {
+                intX--;
+            }
+            else
+            {
+                intO--;
+            }
         }
 
         /// <summary>
         /// This method initializes the game, so a new game can be begin 
+        /// We call the methods initializeArray and initializeTextbox to reset all values.
+        /// We initialize our properties gridColor and actualSign
+        /// 
         /// </summary>
         public void ResetAll()
         {
             initializeArray();
             classTextBoxCollection.InitializeTextBox();
-            gridColor = "Blue";
+            gridColor = "Red";
+            actualSign = "X";
             intO = 0;
             intX = 0;
         }

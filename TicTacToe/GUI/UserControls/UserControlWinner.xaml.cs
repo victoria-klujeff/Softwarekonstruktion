@@ -20,6 +20,13 @@ namespace GUI
     /// </summary>
     public partial class UserControlWinner : UserControl
     {
+        Grid _grid;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="stringWinner"></param>
+        /// <param name="inGrid"></param>
         public UserControlWinner(string stringWinner, Grid inGrid)
         {
             InitializeComponent();
@@ -28,12 +35,13 @@ namespace GUI
             if (stringWinner.ToUpper() == "O")
             {
                 labelWinnerText.Content = "Tillykke O vandt";
-                labelWinnerText.Background = Brushes.Red;
+                labelWinnerText.Background = Brushes.Blue;
+                labelWinnerText.Foreground = Brushes.White;
             }
             else
             {
                 labelWinnerText.Content = "Tillykke X vandt";
-                labelWinnerText.Background = Brushes.Blue;
+                labelWinnerText.Background = Brushes.Red;
                 labelWinnerText.Foreground = Brushes.White;
             }
         }
