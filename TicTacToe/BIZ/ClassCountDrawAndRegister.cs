@@ -9,10 +9,14 @@ namespace BIZ
 {
     public class ClassCountDrawAndRegister : ClassNotify
     {
+        /*Fields*/
         private int _intX;
         private int _intO;
         private int _intScoreCountX;
         private int _intScoreCountO;
+
+        /*Constructor with our initialized properties*/
+
         public ClassCountDrawAndRegister()
         {
             intX = 0;
@@ -26,7 +30,6 @@ namespace BIZ
         protected string[,] strSignPlacement = new string[3, 3];
 
         // Holds a counter for how many times X has been used in the game 
-        
 
         protected int intX
         {
@@ -60,7 +63,7 @@ namespace BIZ
         //Holds a counter for how many times X has won
      
 
-        protected int intScoreCountX
+        public int intScoreCountX
         {
             get { return _intScoreCountX; }
             set
@@ -76,7 +79,7 @@ namespace BIZ
         //Holds a counter for how many times O has won
         
 
-        protected int intScoreCountO
+        public int intScoreCountO
         {
             get { return _intScoreCountO; }
             set

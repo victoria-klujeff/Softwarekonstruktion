@@ -24,7 +24,10 @@ namespace Repository
             InitializeTextBox();
         }
 
-        /* Properties*/
+        /* Properties correpsonding with our textboxes
+         * They are used in a switch statement to determine which property need to be updated
+         
+         */
         public string textBox00
         {
             get { return _textBox00; }

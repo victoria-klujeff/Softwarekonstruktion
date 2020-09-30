@@ -13,6 +13,8 @@ namespace BIZ
         private string _gridColor;
         private string _actualSign;
 
+        /* Constructor with our initialized properties*/
+
         public ClassTextBoxHandler()
         {
             gridColor = "Red";
