@@ -90,12 +90,13 @@ namespace BIZ
                 // If no winner is found we update the color of the gamepad
                 if (bolRes == false)
                 {
-                    SetColorAndSign();
+                    SetSign();
                     //SetSign();
                 }
 
             }
-            
+            else
+            {
                 // If false we need to check if a sign needs to be removed and if true if the sign matches the content of actualSign
                 // If true we remove the sign and all controlelements are updated
                 if (CheckNumberOfSigns() == 3)
@@ -107,6 +108,8 @@ namespace BIZ
                         classTextBoxCollection.SetSign(boxID, "");
                     }
                 }
+            }
+                
             
 
             return bolRes; // return bool bolRes
@@ -116,7 +119,7 @@ namespace BIZ
         /// Method checks which color the property gridColor has
         /// and changes it to fit the conditions in the if iteration
         /// </summary>
-        private void SetColorAndSign()
+        private void SetSign()
         {
             if (gridColor == "Red")
             {
@@ -130,7 +133,7 @@ namespace BIZ
             }
         }
 
-        //private void SetSign()
+        //private void Set()
         //{
         //    if (gridColor == "Red")
         //    {

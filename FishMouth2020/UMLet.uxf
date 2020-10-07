@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>143</x>
+      <y>0</y>
+      <w>2090</w>
+      <h>1298</h>
+    </coordinates>
+    <panel_attributes>FishMouth2020
+--
+bg=gray
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>176</x>
+      <y>33</y>
+      <w>352</w>
+      <h>528</h>
+    </coordinates>
+    <panel_attributes>GUI
+--
+bg=orange
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>638</x>
+      <y>44</y>
+      <w>847</w>
+      <h>792</h>
+    </coordinates>
+    <panel_attributes>BIZ
+--
+bg=orange
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1485</x>
+      <y>66</y>
+      <w>737</w>
+      <h>517</h>
+    </coordinates>
+    <panel_attributes>IO
+--
+bg=orange
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>154</x>
+      <y>902</y>
+      <w>1034</w>
+      <h>385</h>
+    </coordinates>
+    <panel_attributes>Repository
+--
+bg=orange
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>165</x>
+      <y>935</y>
+      <w>594</w>
+      <h>352</h>
+    </coordinates>
+    <panel_attributes>*ClassNotify*
+--
++ event PropertyChangedEventHandler PropertyChanged
+--
+# Notify(string propertyName) void
+--
+Responsibilities
+-- The goal of this class is to add functionality 
+   to all clases that inheret this class
+   The functionality ClassNotify adds is the possibility 
+   to control the notification of an event in a Property
+   This is made possible by ClassNotify implementing the 
+   interface INotifyPropertyChanged
+   This interface sets the requirement that an event of 
+   the type PropertyChangedEventHandler has to be created
+   In the method Notify this event is used to determine 
+   whether any changes has found place in the class that inherits ClasNotify
+   If any changes has happened the instance PropertyChanged is used to 
+   initiate a transferral of data from a given property to GUI
+   where there is created a binding with and id(the name of the property) 
+   that counterparts the name of the property that has been updated with a new value 
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>429</x>
+      <y>869</y>
+      <w>198</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=-()
+m2=INotifyPropertyChanged
+layer=3</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>825</x>
+      <y>1078</y>
+      <w>231</w>
+      <h>209</h>
+    </coordinates>
+    <panel_attributes>*ClassText*
+--
+- string _text
+--
+&lt;property&gt; + string text
+--
+Responsibilities
+-- The goal of this class
+is to provide the opportunity 
+to hold a text.
+In time it can be extended with 
+the neccesary extra functionality
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>748</x>
+      <y>957</y>
+      <w>198</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+layer=3</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1518</x>
+      <y>121</y>
+      <w>352</w>
+      <h>407</h>
+    </coordinates>
+    <panel_attributes>*ClassFileHandler*
+
+--
+
+--
++ ReadTextFromFile(string path) ClassText
++ WriteTextToFile(string path, string text) void
+--
+Responsibilities
+-- Gives the opportunity to read the content 
+   of a file and return the content as an 
+   instance of ClassText
+-- Gives the opportunity to save a text to a file
+   It recieves two parametres: 
+   The first is a path to
+   the placement of the file
+   The second is the content that needs 
+   to be written to the file
+    
+layer=3
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>517</x>
+      <y>572</y>
+      <w>1199</w>
+      <h>385</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+layer=3</panel_attributes>
+    <additional_attributes>10.0;330.0;10.0;270.0;1070.0;270.0;1070.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>517</x>
+      <y>77</y>
+      <w>143</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+layer=3</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>231</x>
+      <y>550</y>
+      <w>44</w>
+      <h>374</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+layer=3</panel_attributes>
+    <additional_attributes>10.0;320.0;20.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>297</x>
+      <y>825</y>
+      <w>363</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+layer=3</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0;310.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>638</x>
+      <y>66</y>
+      <w>363</w>
+      <h>462</h>
+    </coordinates>
+    <panel_attributes>*ClassBIZ*
+--
+- string[] myKey
+- string[] myDummy
+
+-ClassCryptText CCT
+-ClassDecryptText CDT
+
+-ClassText _clearText
+-ClassText _cryptText
+--
+&lt;&lt;property&gt;&gt; ClassText clearText
+&lt;&lt;property&gt;&gt; ClassText cryptText
+
++StartCrypt() void
++StartDecrypt() void
++OpenFile(string inPath) void
++SaveTextToFile(string inPath) void
+ 
+--
+Responsibilities
+-- The default constructor has to initialize 
+   all the properties and instances of classes
+-- The two properties represent the content 
+   of the two textboxes on the GUI and they are used 
+   with the purpose of binding 
+-- The methods are used as a connection between 
+   functionality and GUI
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>638</x>
+      <y>528</y>
+      <w>363</w>
+      <h>308</h>
+    </coordinates>
+    <panel_attributes>*ClassCryptText*
+--
+-string[] myKey
+-ClassDummyText CTD
+--
++ClassCryptText(string[] inKey, string[] inDummy)
+
++CryptString(string inString) string
+-MakeCodeOfChar(char inChar) string
+--
+Responsibilities
+-- This class handles encoding itself 
+-- We use encoding 1252, 
+which can be used if you through NuGet
+install: System.Text.Encoding.CodePages
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1001</x>
+      <y>66</y>
+      <w>484</w>
+      <h>363</h>
+    </coordinates>
+    <panel_attributes>*ClassDummyText*
+--
+-string[] dummyChars
+-Random ran 
+--
++ClassDummyText(string[] inDummy)
+
++MakeDummyString() string 
+--
+Responsibilities
+-- When a new instance of this class is made 
+   a paramter transfer 
+   of an array with chars which are not
+   in the key needs to find place
+-- The method generates a text string 
+    of a random length(10-20) with a random 
+    content of chars from dummyChars
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1001</x>
+      <y>429</y>
+      <w>484</w>
+      <h>407</h>
+    </coordinates>
+    <panel_attributes>*ClassDecrypt*
+Package::FatClass
+{Some Properties}
+--
+-List&lt;string&gt;listKey
+--
++ClassDecryptText(string[] inKey)
+
++DecryptString(string inString) string
+-MakeListOfChars(string[] inKey) void
+-MakeCharOfCode(string inChar) string
+--
+Responsibilities
+-- When a new instance of this class 
+   is made we transfer our parameter 
+   an array with the characters which are in the key
+-- The method DecryptString handles decryptation 
+   and returns the decrypted text
+-- Method MakeListOfChars inserts the values 
+   from an array with with the key into a List
+
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>231</x>
+      <y>77</y>
+      <w>231</w>
+      <h>209</h>
+    </coordinates>
+    <panel_attributes>*MainWindow.xaml*
+--
+
+--
+
+--
+layer=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>275</x>
+      <y>165</y>
+      <w>231</w>
+      <h>209</h>
+    </coordinates>
+    <panel_attributes>*MainWindow.xaml.cs*
+--
+
+--
+
+--
+layer=4
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

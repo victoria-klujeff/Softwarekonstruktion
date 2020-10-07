@@ -16,18 +16,19 @@ namespace BIZ
         /// <summary>
         /// Method which checks if the placement of the signs equals a winning placement 
         /// Method returns a bool true if the placement is a winner and false if not
-        /// Recieves a paramter of string which we used to determine the signs that have been placed
-        /// Create an array which we set equal to the eight possibillities of winning placement 
-        /// We run through a foreach to check if strfacit[i] is a match to the strWinner, we run through the forloop till we find a match or till our counter is eqaul to or less than 7
-        /// Each time we run through the loop we use an if to check if the string containing the combination from GUI matches the strFacit[i]
-        /// We return the result
+        /// Recieves a paramter of string which we used to determine which sign we are checking X or O
+        /// Create an array which we set equal to the content of the textboxes
+        /// The for loop lets us run through till the condiotion in the if is met or till we have run through 8 times
+        /// We use the i counter to determine which strFacit to check for a match
+        /// Each time we run through the loop we use an if to check if strWinner(based on which sign has just been placed) matches the strFacit[i]
+        /// We return bolRes
         /// </summary>
         /// <param name="strSign"></param>
         /// <returns></returns>
         protected bool CheckNewDraw(string strSign)
         {
             bool bolRes = false;
-            string strWinner = strSign + strSign + strSign;
+            string strWinner = strSign + strSign + strSign; 
             string[] strFacit = new string[8];
 
             strFacit[0] = strSignPlacement[0, 0] + strSignPlacement[0, 1] + strSignPlacement[0, 2];
@@ -51,8 +52,8 @@ namespace BIZ
         }
 
         /// <summary>
-        /// Method which recieves a parameter of string
-        /// If inSign matches X we add to the intscoreCountX and if not we add to the intscoreCountO
+        /// Method which recieves a parameter of string(The sign that has just been placed)
+        /// If the content of inSign is X we add to the intscoreCountX and if not we add to the intscoreCountO
         /// </summary>
         /// <param name="inSign"></param>
         private void UpdateScore(string inSign)
