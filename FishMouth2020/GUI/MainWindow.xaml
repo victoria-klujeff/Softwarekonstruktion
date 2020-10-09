@@ -5,15 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Fishmouth 2020" Height="450" Width="800">
+        Title="Fishmouth 2020" Height="850" Width="800">
     <Grid x:Name="mainGrid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"
+                              MinWidth="200"/>
             <ColumnDefinition Width="5"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"
+                              MinWidth="200"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="60"/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
@@ -25,7 +28,7 @@
         <TextBox x:Name="CleanText"
                  Margin="1"
                  AcceptsReturn="True"
-                 Text=""
+                 Text="{Binding cleanText.text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  TextWrapping="Wrap"
                  VerticalAlignment="Stretch"
                  HorizontalAlignment="Stretch"
@@ -35,39 +38,75 @@
                  Margin="1"
                  TextWrapping="Wrap"
                  AcceptsReturn="True"
-                 Text=""
+                 Text="{Binding cryptText.text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  VerticalAlignment="Stretch"
                  HorizontalAlignment="Stretch"
                  Grid.Column="2"
-                 Grid.Row="0"/>
+                 Grid.Row="0"
+                 IsReadOnly="True"/>
+        
         <Button x:Name="ButtonEncrypt"
                 Content="Encrypt"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Margin="75,10"
                 Grid.Row="1"
-                Grid.Column="0"/>
+                Grid.Column="0" Click="ButtonEncrypt_Click"
+                FontFamily="Segoe UI Historic"
+                FontWeight="ExtraBold"
+                FontSize="16"/>
         <Button x:Name="ButtonDecrypt"
                 Content="Decrypt"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Margin="75,10"
                 Grid.Row="1"
-                Grid.Column="2"/>
+                Grid.Column="2" Click="ButtonDecrypt_Click"
+                FontFamily="Segoe UI Historic"
+                FontWeight="ExtraBold"
+                FontSize="16"/>
+
+        <Button x:Name="ButtonRollingEncrypt"
+                Content="Rolling encrypt"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Margin="75,10"
+                Grid.Row="2"
+                Grid.Column="0"
+                FontFamily="Segoe UI Historic"
+                FontWeight="ExtraBold"
+                FontSize="16" Click="ButtonRollingEncrypt_Click"/>
+        <Button x:Name="ButtonRollingDecrypt"
+                Content="Rolling decrypt"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Margin="75,10"
+                Grid.Row="2"
+                Grid.Column="2" 
+                FontFamily="Segoe UI Historic"
+                FontWeight="ExtraBold"
+                FontSize="16" Click="ButtonRollingDecrypt_Click"/>
+
         <Button x:Name="ButtonLoadFromFile"
                 Content="Load text"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Margin="75,10,75,10"
-                Grid.Row="2"
-                Grid.Column="0"/>
+                Grid.Row="3"
+                Grid.Column="0" Click="ButtonLoadFromFile_Click"
+                FontFamily="Segoe UI Historic"
+                FontWeight="ExtraBold"
+                FontSize="16"/>
         <Button x:Name="ButtonSaveToFile"
                 Content="Save"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Margin="75,10,75,10"
-                Grid.Row="2"
-                Grid.Column="2"/>
+                Grid.Row="3"
+                Grid.Column="2" Click="ButtonSaveToFile_Click"
+                FontFamily="Segoe UI Historic"
+                FontWeight="ExtraBold"
+                FontSize="16"/>
 
     </Grid>
 </Window>

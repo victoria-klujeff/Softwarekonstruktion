@@ -8,32 +8,87 @@ namespace BIZ
 {
     public class ClassDecryptText
     {
+        // Instance of list type string which holds our key for decryption
         private List<string> listKey = new List<string>();
 
-        public ClassDecryptText()
-        {
-
-        }
-
+        /// <summary>
+        /// Overloaded constructor
+        /// </summary>
+        /// <param name="inKey"></param>
         public ClassDecryptText(string[] inKey)
         {
-
+            MakeListOfChars(inKey); //
         }
 
-        public string DecryptString()
+        /// <summary>
+        /// This method decrypts our encrypted text
+        /// Create to empty strings
+        /// Encoding so we use the same as when we encrypted
+        /// array of bytes to hold the values of the char
+        /// foreach to run through our array
+        /// If the char is in the listkey we add it to tempRes and continue to do that util we run across a char that is a dummy and not a listkey char
+        /// When we run into a char that is not in our listkey we check if tempRes is empty
+        /// If not we send our tempRes with our method MakeCharOfcode
+        /// tempRes is then set to an empty string again
+        /// </summary>
+        /// <returns> string res </returns>
+        public string DecryptString(string inString)
         {
             string res = "";
+            string tempRes = "";
+
+            Encoding enc1252 = CodePagesEncodingProvider.Instance.GetEncoding(1252);
+            byte[] asciiByte = enc1252.GetBytes(inString);
+
+            foreach (char asciiChar in asciiByte)
+            {
+                //
+                if (listKey.Contains(asciiChar.ToString()))
+                {
+                    tempRes += asciiChar.ToString(); 
+                }
+                else
+                {
+                    if (tempRes != "")
+                    {
+                        res += MakeCharOfCode(tempRes);
+                        tempRes = "";
+                    }
+                }
+            }
             return res;
         }
 
+        /// <summary>
+        /// Insets the values from an array that contains the key into a list????????????????
+        /// 
+        /// </summary>
+        /// <param name="inKey"></param>
         private void MakeListOfChars(string[] inKey)
         {
-
+            foreach (var item in inKey)
+            {
+                listKey.Add(item);
+            }
         }
 
-        private string MakeCharOfCade(string inChar)
+        /// <summary>
+        /// This method takes in a string of chars
+        /// These are 
+        /// </summary>
+        /// <param name="inChar"></param>
+        /// <returns></returns>
+        private string MakeCharOfCode(string inChar)
         {
-            string res = "";
+            string newIndex = "";
+
+            foreach (char singleChar in inChar)
+            {
+                int intChar = listKey.IndexOf(singleChar.ToString());
+                newIndex += intChar.ToString();
+            }
+
+            string res = $"{(char)Convert.ToInt32(newIndex)}";
             return res;
         }
 

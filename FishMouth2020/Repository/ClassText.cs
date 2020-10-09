@@ -8,14 +8,27 @@ namespace Repository
 {
     public class ClassText : ClassNotify
     {
+        // Field
         private string _text;
 
-
+        // Default constructor
         public ClassText()
         {
-
+            text = "";
         }
 
+        /// <summary>
+        /// Overloaded constructor
+        /// </summary>
+        /// <param name="inText"></param>
+        public ClassText(string inText)
+        {
+            text = inText; //
+        }
+
+        /// <summary>
+        /// Property to hold a text(string)
+        /// </summary>
         public string text
         {
             get { return _text; }
@@ -25,7 +38,7 @@ namespace Repository
                 {
                     _text = value;
                 }
-                //Notify("text");
+                Notify("text");
             }
         }
 

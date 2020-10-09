@@ -16,44 +16,48 @@ namespace IO
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public ClassText ReadTextFromFile(string path)
         {
-            String line;
-            string filePath = @"C:\Users\vict4454\Desktop\Softwareprogrammering\S2\CODE\Softwarekonstruktion\FishMouth2020"; 
+            ClassText ct = new ClassText();
+
             try
             {
-                StreamReader sr = new StreamReader(filePath);
-
-                line = sr.ReadLine();
-
-                while (line != null)
+                FileStream fileStream = new FileStream(path, FileMode.Open);
+                using (StreamReader reader = new StreamReader(fileStream))
                 {
-                    line = sr.ReadLine();
+                    ct.text = reader.ReadToEnd();
                 }
-                sr.Close();
-
             }
-            catch (Exception e)
+            catch (IOException ex)
             {
-
-                throw e;
+                throw ex;
             }
-
+            return ct;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="text"></param>
         public void WriteTextToFile(string path, string text)
         {
             try
             {
-                //Pass the filepath and filename to the StreamWriter Constructor
-                StreamWriter sw = new StreamWriter(@"C:\Users\vict4454\Desktop\Softwareprogrammering\S2\CODE\Softwarekonstruktion\FishMouth2020");
-                
-                //Close the file
-                sw.Close();
+                using (StreamWriter writer = new StreamWriter(File.Create(path)))
+                {
+                    writer.WriteLine(text);
+                }
             }
-            catch (Exception e)
+            catch (IOException ex)
             {
-                throw e;
+
+                throw ex;
             }
         }
     }

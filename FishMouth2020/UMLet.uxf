@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>11</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>143</x>
-      <y>0</y>
-      <w>2090</w>
-      <h>1298</h>
+      <x>0</x>
+      <y>63</y>
+      <w>1710</w>
+      <h>1062</h>
     </coordinates>
     <panel_attributes>FishMouth2020
 --
@@ -18,10 +18,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>176</x>
-      <y>33</y>
-      <w>352</w>
-      <h>528</h>
+      <x>27</x>
+      <y>90</y>
+      <w>288</w>
+      <h>432</h>
     </coordinates>
     <panel_attributes>GUI
 --
@@ -32,10 +32,10 @@ layer=2</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>638</x>
-      <y>44</y>
-      <w>847</w>
-      <h>792</h>
+      <x>405</x>
+      <y>99</y>
+      <w>693</w>
+      <h>648</h>
     </coordinates>
     <panel_attributes>BIZ
 --
@@ -46,10 +46,10 @@ layer=2</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1485</x>
-      <y>66</y>
-      <w>737</w>
-      <h>517</h>
+      <x>1098</x>
+      <y>117</y>
+      <w>603</w>
+      <h>423</h>
     </coordinates>
     <panel_attributes>IO
 --
@@ -60,10 +60,10 @@ layer=2</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>154</x>
-      <y>902</y>
-      <w>1034</w>
-      <h>385</h>
+      <x>9</x>
+      <y>801</y>
+      <w>846</w>
+      <h>315</h>
     </coordinates>
     <panel_attributes>Repository
 --
@@ -74,10 +74,10 @@ layer=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>165</x>
-      <y>935</y>
-      <w>594</w>
-      <h>352</h>
+      <x>18</x>
+      <y>828</y>
+      <w>486</w>
+      <h>288</h>
     </coordinates>
     <panel_attributes>*ClassNotify*
 --
@@ -106,10 +106,10 @@ layer=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>429</x>
-      <y>869</y>
-      <w>198</w>
-      <h>88</h>
+      <x>234</x>
+      <y>774</y>
+      <w>162</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=-()
 m2=INotifyPropertyChanged
@@ -119,10 +119,10 @@ layer=3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>825</x>
-      <y>1078</y>
-      <w>231</w>
-      <h>209</h>
+      <x>558</x>
+      <y>945</y>
+      <w>189</w>
+      <h>171</h>
     </coordinates>
     <panel_attributes>*ClassText*
 --
@@ -142,10 +142,10 @@ layer=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>748</x>
-      <y>957</y>
-      <w>198</w>
-      <h>143</h>
+      <x>495</x>
+      <y>846</y>
+      <w>162</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 layer=3</panel_attributes>
@@ -154,10 +154,10 @@ layer=3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1518</x>
-      <y>121</y>
-      <w>352</w>
-      <h>407</h>
+      <x>1125</x>
+      <y>162</y>
+      <w>288</w>
+      <h>333</h>
     </coordinates>
     <panel_attributes>*ClassFileHandler*
 
@@ -185,10 +185,10 @@ layer=3
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>517</x>
-      <y>572</y>
-      <w>1199</w>
-      <h>385</h>
+      <x>306</x>
+      <y>531</y>
+      <w>981</w>
+      <h>315</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 layer=3</panel_attributes>
@@ -197,10 +197,10 @@ layer=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>517</x>
-      <y>77</y>
-      <w>143</w>
-      <h>33</h>
+      <x>306</x>
+      <y>126</y>
+      <w>117</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 layer=3</panel_attributes>
@@ -209,10 +209,10 @@ layer=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>231</x>
-      <y>550</y>
-      <w>44</w>
-      <h>374</h>
+      <x>72</x>
+      <y>513</y>
+      <w>36</w>
+      <h>306</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 layer=3</panel_attributes>
@@ -221,10 +221,10 @@ layer=3</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>297</x>
-      <y>825</y>
-      <w>363</w>
-      <h>99</h>
+      <x>126</x>
+      <y>738</y>
+      <w>297</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 layer=3</panel_attributes>
@@ -233,10 +233,10 @@ layer=3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>638</x>
-      <y>66</y>
-      <w>363</w>
-      <h>462</h>
+      <x>405</x>
+      <y>117</y>
+      <w>297</w>
+      <h>378</h>
     </coordinates>
     <panel_attributes>*ClassBIZ*
 --
@@ -272,10 +272,10 @@ layer=3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>638</x>
-      <y>528</y>
-      <w>363</w>
-      <h>308</h>
+      <x>405</x>
+      <y>495</y>
+      <w>297</w>
+      <h>252</h>
     </coordinates>
     <panel_attributes>*ClassCryptText*
 --
@@ -298,10 +298,10 @@ layer=3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1001</x>
-      <y>66</y>
-      <w>484</w>
-      <h>363</h>
+      <x>702</x>
+      <y>117</y>
+      <w>396</w>
+      <h>297</h>
     </coordinates>
     <panel_attributes>*ClassDummyText*
 --
@@ -326,10 +326,10 @@ layer=3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1001</x>
-      <y>429</y>
-      <w>484</w>
-      <h>407</h>
+      <x>702</x>
+      <y>414</y>
+      <w>396</w>
+      <h>333</h>
     </coordinates>
     <panel_attributes>*ClassDecrypt*
 Package::FatClass
@@ -337,7 +337,7 @@ Package::FatClass
 --
 -List&lt;string&gt;listKey
 --
-+ClassDecryptText(string[] inKey)
++ClassEncryptText(string[] inKey)
 
 +DecryptString(string inString) string
 -MakeListOfChars(string[] inKey) void
@@ -350,7 +350,7 @@ Responsibilities
 -- The method DecryptString handles decryptation 
    and returns the decrypted text
 -- Method MakeListOfChars inserts the values 
-   from an array with with the key into a List
+   from an array with the key into a List
 
 layer=3</panel_attributes>
     <additional_attributes/>
@@ -358,10 +358,10 @@ layer=3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>231</x>
-      <y>77</y>
-      <w>231</w>
-      <h>209</h>
+      <x>72</x>
+      <y>126</y>
+      <w>189</w>
+      <h>171</h>
     </coordinates>
     <panel_attributes>*MainWindow.xaml*
 --
@@ -375,10 +375,10 @@ layer=3</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>275</x>
-      <y>165</y>
-      <w>231</w>
-      <h>209</h>
+      <x>108</x>
+      <y>198</y>
+      <w>189</w>
+      <h>171</h>
     </coordinates>
     <panel_attributes>*MainWindow.xaml.cs*
 --
