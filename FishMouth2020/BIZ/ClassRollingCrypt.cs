@@ -61,12 +61,22 @@ namespace BIZ
         }
 
         /// <summary>
+        /// This method returns a string and recieves a parameter of char inChar.
+        /// So it handles taking each character from the clean text and convert it to a string of characters based on our encryption key.
+        /// We take our char and extract the value as int 
+        /// Then we convert it to a string so we can acces the numbers one by one
+        /// Iteration runs through strChar and each time puts the letter in element. 
+        /// We need to convert our element to string so we can convert it to int.
+        /// We use the int(charInt) to find the corresponding element in our myKey array.
+        /// So charInt is the index we need to find in our myKey array.
+        /// We return a string of characters 
+        /// intJump is based on the length of our dummyString.
         /// 
         /// </summary>
-        /// <param name="inChar"></param>
-        /// <param name="inJump"></param>
-        /// <returns></returns>
-       private string MakeCodeOfChar(char inChar, int inJump)
+        /// <param name="inChar"> char </param>
+        /// <param name="inJump"> int </param>
+        /// <returns>string</returns>
+        private string MakeCodeOfChar(char inChar, int inJump)
         {
             string res = "";
             int localJump = 1;

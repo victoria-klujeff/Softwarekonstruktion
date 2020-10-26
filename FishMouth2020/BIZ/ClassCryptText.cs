@@ -40,11 +40,12 @@ namespace BIZ
         public string CryptString(string inString)
         {
             string res = "";
-            Encoding enc1252 = CodePagesEncodingProvider.Instance.GetEncoding(1252);
+            Encoding enc1252 = CodePagesEncodingProvider.Instance.GetEncoding(1252); // Tells which encoding to use to read the text from the left textbox
             byte[] asciiByte = enc1252.GetBytes(inString);
 
             res = CTD.MakeDummyString(); // Ensure the encrypted text always starts out with dummy text
 
+            // This is where the actual encryption takes place
             foreach (char asciiChar in asciiByte)
             {
                 res += MakeCodeOfChar(asciiChar);
@@ -73,6 +74,7 @@ namespace BIZ
             int intChar = inChar;
             string strChar = intChar.ToString();
 
+            
             foreach (char element in strChar)
             {
                 string charString = element.ToString();

@@ -60,8 +60,8 @@ namespace BIZ
         }
 
         /// <summary>
-        /// Insets the values from an array that contains the key into a list????????????????
-        /// 
+        /// This method converts our key array to a list that holds the key
+        /// Uses a foreach to run through the array and places each element in a list
         /// </summary>
         /// <param name="inKey"></param>
         private void MakeListOfChars(string[] inKey)

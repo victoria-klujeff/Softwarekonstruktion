@@ -17,10 +17,13 @@ namespace IO
         }
 
         /// <summary>
-        /// 
+        /// This method reads a file from a given path.
+        /// fileStream finds and creates a connection to the file
+        /// reader sets a pointer at the very beginning of the file.
+        /// reader.ReadToEnd indicates what part of the file needs to be read(it reads the entire file).
         /// </summary>
-        /// <param name="path"></param>
-        /// <returns></returns>
+        /// <param name="path"> string </param>
+        /// <returns> ClassText </returns>
         public ClassText ReadTextFromFile(string path)
         {
             ClassText ct = new ClassText();
@@ -41,10 +44,13 @@ namespace IO
         }
 
         /// <summary>
-        /// 
+        /// This method recieves a path to where the file needs to be saved.
+        /// And a text which needs to be saved where the path points at.
+        /// writer writes the text to the file.
+        /// Create creates the path and the empty file.
         /// </summary>
-        /// <param name="path"></param>
-        /// <param name="text"></param>
+        /// <param name="path"> string </param>
+        /// <param name="text">string </param>
         public void WriteTextToFile(string path, string text)
         {
             try
