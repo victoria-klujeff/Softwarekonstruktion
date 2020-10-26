@@ -61,7 +61,7 @@ namespace IO
             ClassCityWeather classCityWeather = new ClassCityWeather();
 
             var content = new MemoryStream();
-            var webReq = (HttpWebRequest)WebRequest.Create($"https://api.openweathermap.org/data/2.5/weather?q={inCityName}&appid=2beb42488b790cae931e8106c7a52c5e&lang=da&units=metric");
+            var webReq = (HttpWebRequest)WebRequest.Create($"https://api.openweathermap.org/data/2.5/weather?q={inCityName}&appid={key}&lang=da&units=metric");
 
             using (WebResponse response = await webReq.GetResponseAsync())
             {
