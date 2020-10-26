@@ -1,0 +1,266 @@
+﻿<Window x:Class="GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Icon="C:\Users\vict4454\Desktop\Softwareprogrammering\S2\CODE\Softwarekonstruktion\WeatherApp\backgroundImage\sol.png"
+        Title="Weather App" Height="500" Width="350">
+    <Grid x:Name="MainGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\vict4454\Desktop\Softwareprogrammering\S2\CODE\Softwarekonstruktion\WeatherApp\backgroundImage\bluesky2.jpg" 
+              Opacity="0.4"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="121*"/>
+            <ColumnDefinition Width="140*"/>
+            <ColumnDefinition Width="64*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Vejrudsigt"
+               Grid.Row="0"
+               Grid.Column="0"
+               Margin="3,3,2.8,3"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center"
+               FontSize="25"
+               FontFamily="Roboto"
+               FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label Content="{Binding cityWeather.name}"
+               Grid.Row="0"
+               Grid.Column="2"
+               Grid.ColumnSpan="2"
+               FontFamily="Roboto"
+               FontWeight="Bold"
+               FontSize="20"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center" Margin="0.2,0"/>
+        <Label Content="Temperatur:"
+               Grid.Row="2"
+               Grid.Column="0"
+               HorizontalContentAlignment="Left"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20"
+               FontWeight="Bold" Grid.ColumnSpan="3" Margin="0,0,140.2,42.6" Grid.RowSpan="2"/>
+        <Label Content="°C"
+               Grid.Row="2"
+               Grid.Column="2"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20" Grid.ColumnSpan="2" Margin="140.2,0,0.2,42.6" Grid.RowSpan="2"/>
+        <Label Content="Vejret nu:"
+               Grid.Row="3"
+               Grid.Column="0"
+               HorizontalContentAlignment="Left"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20"
+               FontWeight="Bold" Grid.ColumnSpan="3" Margin="0,0.2,140.2,42" Grid.RowSpan="2"/>
+        <Label Content="Lufttryk:"
+               Grid.Row="4"
+               Grid.Column="0"
+               HorizontalContentAlignment="Left"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20"
+               FontWeight="Bold" Grid.ColumnSpan="3" Margin="0,0.4,140.2,0"/>
+        <Label Content="hPa"
+               Grid.Row="4"
+               Grid.Column="2"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20" Grid.ColumnSpan="2" Margin="140.2,0.4,0.2,0"/>
+        <Label Content="Luftfugtighed:"
+               Grid.Row="5"
+               Grid.Column="0"
+               ToolTip="Relativ luftfugtighed"
+               HorizontalContentAlignment="Left"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20"
+               FontWeight="Bold" Grid.ColumnSpan="3" Margin="0,0,140.2,0.4"/>
+        <Label Content="%"
+               Grid.Row="5"
+               Grid.Column="2"
+               ToolTip="Relativ luftfugtighed"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20" Grid.ColumnSpan="2" Margin="140.2,0,0.2,0.4"/>
+        <Label Content="Vindretning:"
+               Grid.Row="5"
+               Grid.Column="0"
+               HorizontalContentAlignment="Left"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20"
+               FontWeight="Bold" Grid.ColumnSpan="3" Margin="0,42,140.2,0.2" Grid.RowSpan="2"/>
+        <Label Content="Vindhastighed:"
+               Grid.Row="6"
+               Grid.Column="0"
+               HorizontalContentAlignment="Left"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20"
+               FontWeight="Bold" Grid.ColumnSpan="3" Margin="0,42.6,140.2,42" Grid.RowSpan="3"/>
+        <Label Content="ms/s"
+               Grid.Row="6"
+               Grid.Column="2"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20" Grid.ColumnSpan="2" Margin="140.2,42.6,0.2,42" Grid.RowSpan="3"/>
+        <Label Content="Skydække:"
+               Grid.Row="8"
+               Grid.Column="0"
+               HorizontalContentAlignment="Left"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20"
+               FontWeight="Bold" Grid.ColumnSpan="3" Margin="0,0.4,140.2,0"/>
+        <Label Content="%"
+               Grid.Row="8"
+               Grid.Column="2"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20" Grid.ColumnSpan="2" Margin="140.2,0.4,0.2,0"/>
+        <Label Content="Solopgang:"
+               Grid.Row="9"
+               Grid.Column="0"
+               HorizontalContentAlignment="Left"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20"
+               FontWeight="Bold" Grid.ColumnSpan="3" Margin="0,0,140.2,0.4"/>
+        <Label Content="Solnedgang:"
+               Grid.Row="9"
+               Grid.Column="0"
+               HorizontalContentAlignment="Left"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20"
+               FontWeight="Bold" Grid.ColumnSpan="3" Margin="0,42,140.2,-0.2" Grid.RowSpan="2"/>
+        <Label Content="{Binding cityWeather.main.temp}"
+               Grid.Row="2"
+               Grid.Column="2"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20" Margin="0.2,0,0.2,42.6" Grid.RowSpan="2"/>
+        <Label Content="{Binding cityWeather.weather[0].description}"
+               Grid.Row="3"
+               Grid.Column="2"               
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20" Margin="0.2,0.2,0.2,42" Grid.RowSpan="2"
+               />
+        <Label Content="{Binding cityWeather.main.pressure}"
+               Grid.Row="4"
+               Grid.Column="2"               
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20" Margin="0.2,0.4,0.2,0"/>
+        <Label Content="{Binding cityWeather.main.humidity}"
+               Grid.Row="5"
+               Grid.Column="2"
+               ToolTip="Relativ luftfugtighed"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20" Margin="0.2,0,0.2,0.4"/>
+        <Label Content="{Binding cityWeather.wind.degText}"
+               Grid.Row="5"
+               Grid.Column="2"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20" Margin="0.2,42,0.2,0.2" Grid.RowSpan="2"
+               />
+        <Label Content="{Binding cityWeather.wind.speed}"
+               Grid.Row="6"
+               Grid.Column="2"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20" Margin="0.2,42.6,0.2,42" Grid.RowSpan="3"/>
+        <Label Content="{Binding cityWeather.clouds.all}"
+               Grid.Row="8"
+               Grid.Column="2"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20" Margin="0.2,0.4,0.2,0"/>
+        <Label Content="{Binding cityWeather.sys.sunriseText}"
+               Grid.Row="9"
+               Grid.Column="2"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20" Margin="0.2,0,0.2,0.4"/>
+        <Label Content="{Binding cityWeather.sys.sunsetText}"
+               Grid.Row="9"
+               Grid.Column="2"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Bottom"
+               FontFamily="Roboto"
+               FontSize="20" Margin="0.2,42,0.2,-0.2" Grid.RowSpan="2"/>
+        <TextBox x:Name="textBoxCitySearch"
+                 Text="{Binding cityName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="1"
+                 Grid.Column="0"
+                 HorizontalContentAlignment="Left"
+                 VerticalContentAlignment="Center"
+                 FontFamily="Roboto" Grid.ColumnSpan="3" Margin="0,0,140.2,0" KeyDown="textBoxCitySearch_KeyDown"/>
+        <Button x:Name="ButtonCitySearch"
+                Content="Søg"
+                Grid.Row="1"
+                Grid.Column="2"
+                Margin="35.2,0"
+                FontSize="12"
+                FontWeight="Bold"
+                Background="White"
+                Foreground="Black"
+                BorderBrush="White" Click="ButtonCitySearch_Click"/>
+        <Image HorizontalAlignment="Center"
+               Source="{Binding cityWeather.weather[0].iconPath}"
+               Grid.Column="3"
+               Grid.Row="3" Margin="31.8,0.2,32.2,42" Grid.RowSpan="2"/>
+        <Image HorizontalAlignment="Center"
+               Source="http://openweathermap.org/img/w/01d.png"
+               Grid.Column="3"
+               Grid.Row="9" Margin="10.8,0,11.2,0.4"/>
+        <Image HorizontalAlignment="Center"
+               Source="http://openweathermap.org/img/w/01n.png"
+               Grid.Column="3"
+               Grid.Row="9" Margin="10.8,42,11.2,-0.2" Grid.RowSpan="2"/>
+        <Image Source="C:\Users\vict4454\Desktop\Softwareprogrammering\S2\CODE\Softwarekonstruktion\WeatherApp\backgroundImage\pil-transperant.png"
+               Grid.Row="5"
+               Grid.Column="2"
+               RenderTransformOrigin=".5,.5" Grid.ColumnSpan="2" Margin="140.2,42,0.2,0.2" Grid.RowSpan="2">
+            <Image.RenderTransform>
+                <RotateTransform
+                    Angle="{Binding cityWeather.wind.deg}"/>
+            </Image.RenderTransform>
+        </Image>
+    </Grid>
+</Window>
