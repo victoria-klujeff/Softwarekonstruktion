@@ -1,0 +1,227 @@
+﻿<UserControl x:Class="GUI.UserControlBooking"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid x:Name="BookingMainGrid" Background="#FFE5E5E5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <ListView Grid.Column="0"
+                  Grid.Row="0"
+                  Grid.ColumnSpan="6"
+                  Grid.RowSpan="3"
+                  Margin="2"
+                  ItemsSource="{Binding tripList}"
+                  SelectedValue="{Binding selectedTrip}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Titel"
+                                    Width="auto"
+                                    DisplayMemberBinding="{Binding title}"/>
+                    <GridViewColumn Header="Destination"
+                                    Width="auto" 
+                                    DisplayMemberBinding="{Binding destination}"/>
+                    <GridViewColumn Header="Afrejse"
+                                    Width="auto" 
+                                    DisplayMemberBinding="{Binding startDate}"/>
+                    <GridViewColumn Header="Hjemkomst"
+                                    Width="auto" 
+                                    DisplayMemberBinding="{Binding endDate}"/>
+                    <GridViewColumn Header="Pris"
+                                    Width="auto" 
+                                    DisplayMemberBinding="{Binding price}"/>
+                    <GridViewColumn Header="Beskrivelse"
+                                    Width="auto" 
+                                    DisplayMemberBinding="{Binding description}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView Grid.Column="0"
+                  Grid.Row="3"
+                  Grid.ColumnSpan="6"
+                  Grid.RowSpan="3"
+                  Margin="2"
+                  ItemsSource="{Binding customerList}"
+                  SelectedItem="{Binding selectedCustomer}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Navn"
+                                    Width="auto" />
+                    <GridViewColumn Header="Adresse"
+                                    Width="auto" />
+                    <GridViewColumn Header="Postnr. og By"
+                                    Width="auto" />
+                    <GridViewColumn Header="Telefon"
+                                    Width="auto" />
+                    <GridViewColumn Header="Mail"
+                                    Width="auto" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView Grid.Column="3"
+                  Grid.Row="6"
+                  Grid.ColumnSpan="6"
+                  Grid.RowSpan="4"
+                  Margin="2"
+                  ItemsSource="{Binding participantList}"
+                  SelectedValue="{Binding selectedParticipant}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Navn"
+                                    Width="auto" />
+                    <GridViewColumn Header="Alder"
+                                    Width="auto" />
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Label Content="Antal ledige pladser på valgte rejse:"
+               Grid.Column="0"
+               Grid.Row="6"
+               FontSize="14"
+               FontWeight="Bold"
+               Grid.ColumnSpan="2"
+               Margin="3" />
+        <Label Content="{Binding}"
+               Grid.Column="2"
+               VerticalContentAlignment="Center"
+               HorizontalContentAlignment="Center"
+               Grid.Row="6"
+               FontSize="18"
+               FontWeight="Bold"
+               Margin="3" />
+        <Label Content="Pris pr. deltager på valgte rejse:"
+               Grid.Column="0"
+               Grid.Row="7"
+               FontSize="14"
+               FontWeight="Bold"
+               Grid.ColumnSpan="2"
+               Margin="3" />
+        <Label Content="{Binding selectedTrip.price}"
+               Grid.Column="2"
+               VerticalContentAlignment="Center"
+               HorizontalContentAlignment="Center"
+               Grid.Row="7"
+               FontSize="17"
+               FontWeight="Bold"
+               Margin="3" />
+        <Label Content="Antal deltagere på holdet:"
+               Grid.Column="0"
+               Grid.Row="8"
+               FontSize="14"
+               FontWeight="Bold"
+               Grid.ColumnSpan="2"
+               Margin="3" />
+        <TextBox Grid.Row="8"
+                 Grid.Column="2"
+                 Margin="3"
+                 Text="{Binding hest}"
+                 FontSize="16"
+                 FontWeight="Bold"
+                 IsReadOnly="True"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center" />
+        <Label Content="Samlet pris for rejsen:"
+               Grid.Column="0"
+               Grid.Row="9"
+               FontSize="14"
+               FontWeight="Bold"
+               Grid.ColumnSpan="2"
+               Margin="3" />
+        <Label Content="{Binding}"
+               Grid.Column="2"
+               Grid.Row="9"
+               FontSize="17"
+               FontWeight="Bold"
+               HorizontalContentAlignment="Center"
+               Margin="3" />
+
+        <Label Content="Deltager navn"
+               Grid.Column="3"
+               Grid.Row="10"
+               FontSize="14"
+               FontWeight="Bold"
+               Grid.ColumnSpan="1"
+               Margin="3" />
+        <TextBox Grid.Row="10"
+                 Grid.Column="4"
+                 Grid.ColumnSpan="2"
+                 Margin="3"
+                 Text=""
+                 FontSize="16"
+                 FontWeight="Bold"
+                 IsReadOnly="True"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center" />
+
+        <Label Content="Deltager alder"
+               Grid.Column="3"
+               Grid.Row="11"
+               FontSize="14"
+               FontWeight="Bold"
+               Grid.ColumnSpan="1"
+               Margin="3" />
+        <DatePicker Grid.Column="4"
+                    Grid.Row="11"
+                    Grid.ColumnSpan="2"
+                    IsEnabled="True"
+                    SelectedDate="{Binding selectedParticipant.age, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    />
+
+        <Button x:Name="ButtonAddParticipant"
+                Grid.Row="12"
+                Grid.Column="3"
+                Grid.ColumnSpan="3"
+                Background="LightGray"
+                Margin="5,3"
+                FontSize="14"
+                FontWeight="Bold"
+                Content="Tilføj deltager" Click="ButtonAddParticipant_Click" />
+        <Button x:Name="ButtonCompleteBooking"
+                Grid.Row="10"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Grid.RowSpan="2"
+                Background="LightGray"
+                Margin="25,15"
+                FontSize="24"
+                FontWeight="Bold"
+                Content="Gennemfør salg" Click="ButtonCompleteBooking_Click" />
+        <Button x:Name="ButtonRegretBooking"
+                Grid.Row="12"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Background="LightGray"
+                Margin="25,5"
+                FontSize="14"
+                FontWeight="Bold"
+                Content="Fortryd salg" Click="ButtonRegretBooking_Click" />
+
+    </Grid>
+
+</UserControl>

@@ -1,29 +1,25 @@
-﻿using System;
+﻿using Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Repository;
 using System.IO;
 using System.Net;
 
 namespace IO
 {
-    public class ClassWebApi
+    public class ClassCallWebAPI
     {
-        public ClassWebApi()
+        public ClassCallWebAPI()
         {
 
         }
 
+
         /// <summary>
         /// This method creates the connection the webApi.
-        /// We send a request with several parameters which indicates:
-        ///     appid: unique key 
-        ///     q: name of the city
-        ///     lang: language(da)
-        ///     units: type of unit system is returned(metric)
         ///  We make an instance of MemoryStream, 
         ///  this is the object which contains the return of our request as a collection of bytes.
         ///  Create an abstract variable webReq which holds the actual request.
@@ -54,14 +50,13 @@ namespace IO
         ///  have to be implemented in the datatype.
         ///  Then we return an instance of ClassCityWeather which now contains all the data we have recieved from the Web API.
         /// </summary>
-        /// <param name="inCityName">string</param>
-        /// <returns>Task<ClassCityWeather></returns>
-        public async Task<ClassCityWeather> GetDataFromWeatherOrg(string inCityName)
+        /// <returns>Task<ClassCurrency></returns>
+        public async Task<ClassCurrency> GetURLContentsAsync()
         {
-            ClassCityWeather classCityWeather = new ClassCityWeather();
 
+            ClassCurrency CC = new ClassCurrency();
             var content = new MemoryStream();
-            var webReq = (HttpWebRequest)WebRequest.Create($"https://api.openweathermap.org/data/2.5/weather?q={inCityName}&appid=2beb42488b790cae931e8106c7a52c5e&lang=da&units=metric");
+            var webReq = (HttpWebRequest)WebRequest.Create($"https://openexchangerates.org/api/latest.json?app_id=02ce56841b244b9ebd18d47a7d8c40e7");
 
             using (WebResponse response = await webReq.GetResponseAsync())
             {
@@ -72,10 +67,10 @@ namespace IO
             }
 
             string strRes = System.Text.Encoding.UTF8.GetString(content.ToArray()); // content is byte, if we make them into an array we can use encoding to make a readable string
-            classCityWeather = JsonConvert.DeserializeObject<ClassCityWeather>(strRes); // JsonConvert class has a method called Deserialze object, 
+            CC = JsonConvert.DeserializeObject<ClassCurrency>(strRes); // JsonConvert class has a method called Deserialze object, 
                                                                                         // the method needs an indication of the object it needs to build(ClassCityWeather) 
                                                                                         // and a parameter which here is a string that contains the data recieved fromt the api as a string in Json format
-            return classCityWeather;
+            return CC;
         }
     }
 }

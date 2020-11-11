@@ -1,0 +1,41 @@
+﻿<Window x:Class="GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="MainGrid">
+        <TabControl HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch"                  
+                    Margin="2">
+            <TabItem Header="Rejsearrangementer">
+                <Grid x:Name="TripGrid" Background="#FFE5E5E5">
+                    
+                </Grid>
+            </TabItem>
+            
+            <TabItem Header="Book rejse">
+                <Grid x:Name="BookingGrid"
+                    Background="#FFE5E5E5"/>
+            </TabItem>
+            
+            <TabItem Header="Kunder">
+                <Grid x:Name="CustomerGrid" 
+                      Background="#FFE5E5E5"/>
+            </TabItem>
+            
+            <TabItem Header="Transportører">
+                <Grid x:Name="TransportGrid"
+                      Background="#FFE5E5E5"/>
+            </TabItem>
+
+            <TabItem Header="Vejrudsigt">
+                <Grid x:Name="WeatherForecastGrid"
+                      Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
